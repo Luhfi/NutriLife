@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Diet Programs</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .diet-programs {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .program-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .program-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .program-content {
+            padding: 20px;
+        }
+
+        .program-title {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .program-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .program-features {
+            margin-bottom: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: #67ffae;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .calculator-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator-form {
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .calculate-btn {
+            background: #67ffae;
+            color: #333;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .calculate-btn:hover {
+            background: #1ed48e;
+        }
+
+        .result-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .timeline {
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .timeline-content {
+            margin-left: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-toggle-label {
+            display: none;
+        }
+
+        /* Mobile styles */
+        @media screen and (max-width: 768px) {
+            nav {
+                width: 100%;
+                position: fixed;
+                top: 0;
+                padding: 10px 5%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: rgba(0, 0, 0, 0.9);
+                z-index: 1000;
+            }
+
+            .nav-toggle-label {
+                display: block;
+                cursor: pointer;
+                position: relative;
+                z-index: 1000;
+                padding: 1rem;
+            }
+
+            .nav-toggle-label span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin-bottom: 5px;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -200px;
+                width: 200px;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.9);
+                padding-top: 60px;
+                transition: right 0.3s ease-in-out;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 20px;
+            }
+
+            .nav-toggle:checked ~ ul {
+                right: 0;
+            }
+
+            body {
+                padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="image/logo.png" class="logo" alt="Healthy Food Logo">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#recipes">Recipes</a></li>
+            <li><a href="index.html#tips">Tips</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="healthyfoods.html">Healthy Foods</a></li>
+            <li><a href="dietprogram.html">Diet Program</a></li>
+        </ul>
+    </nav>
+
+    <div class="diet-programs">
+        <div class="container">
+            <h1 class="sub-title">Healthy Diet Programs</h1>
+            <p>Choose the perfect diet program tailored to your goals and lifestyle.</p>
+
+            <div class="program-container">
+                <!-- Weight Loss Program -->
+                <div class="program-card">
+                    <img src="image/weightloss.jpg" alt="Weight Loss Program" class="program-image">
+                    <div class="program-content">
+                        <h2 class="program-title">Weight Loss Program</h2>
+                        <p class="program-description">A balanced approach to sustainable weight loss through healthy eating and lifestyle changes.</p>
+                        <div class="program-features">
+                            <div class="feature-item">Personalized meal plans</div>
+                            <div class="feature-item">Calorie-controlled portions</div>
+                            <div class="feature-item">Weekly progress tracking</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Muscle Gain Program -->
+                <div class="program-card">
+                    <img src="image/musclegain.jpg" alt="Muscle Gain Program" class="program-image">
+                    <div class="program-content">
+                        <h2 class="program-title">Muscle Gain Program</h2>
+                        <p class="program-description">High-protein diet plans designed to support muscle growth and recovery.</p>
+                        <div class="program-features">
+                            <div class="feature-item">Protein-rich meal plans</div>
+                            <div class="feature-item">Supplement guidance</div>
+                            <div class="feature-item">Workout nutrition timing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maintenance Program -->
+                <div class="program-card">
+                    <img src="image/maintenance.jpg" alt="Maintenance Program" class="program-image">
+                    <div class="program-content">
+                        <h2 class="program-title">Maintenance Program</h2>
+                        <p class="program-description">Maintain your ideal weight while enjoying a flexible and sustainable diet.</p>
+                        <div class="program-features">
+                            <div class="feature-item">Balanced nutrition plans</div>
+                            <div class="feature-item">Lifestyle integration</div>
+                            <div class="feature-item">Long-term sustainability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BMI Calculator Section -->
+            <div class="calculator-section">
+                <h2 class="program-title">BMI Calculator</h2>
+                <p>Calculate your Body Mass Index to determine your healthy weight range.</p>
+                <form class="calculator-form" id="bmiCalculator">
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" required>
+                    </div>
+                    <button type="submit" class="calculate-btn">Calculate BMI</button>
+                    <div class="result-section" id="bmiResult"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Be Healthy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('bmiCalculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100;
+            const bmi = weight / (height * height);
+            
+            let category;
+            if (bmi < 18.5) category = 'Underweight';
+            else if (bmi < 25) category = 'Normal weight';
+            else if (bmi < 30) category = 'Overweight';
+            else category = 'Obese';
+
+            const resultDiv = document.getElementById('bmiResult');
+            resultDiv.innerHTML = `
+                <h3>Your BMI: ${bmi.toFixed(1)}</h3>
+                <p>Category: ${category}</p>
+                <p>Healthy BMI range: 18.5 - 24.9</p>
+            `;
+            resultDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
